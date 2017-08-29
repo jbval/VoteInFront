@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterializeModule } from 'ng2-materialize';
 
@@ -24,6 +25,7 @@ import { CreatePollComponent } from './poll/create/createPoll.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MaterializeModule.forRoot(),
     routes
   ],
