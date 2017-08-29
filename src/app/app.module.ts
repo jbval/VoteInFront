@@ -11,6 +11,7 @@ import { routes } from './app.router';
 import { AboutComponent } from './about/about.component';
 import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
+import { VotePollComponent } from './poll/vote/votePoll.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CreatePollComponent } from './poll/create/createPoll.component';
     AboutComponent,
     PollComponent,
     CreatePollComponent,
+    VotePollComponent,
   ],
   imports: [
     BrowserModule,

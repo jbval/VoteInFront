@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PollComponent } from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
+import { VotePollComponent } from './poll/vote/votePoll.component';
 
 export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,7 +16,7 @@ export const appRoutes: Routes = [
         component: PollComponent,
         children: [
             {path:'create', component:CreatePollComponent},
-            //{path:':id', }
+            {path:':id', component:VotePollComponent}
         ]
     },
     /*{ path: 'poll/create', component: CreatePollComponent },*/

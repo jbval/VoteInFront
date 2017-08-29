@@ -1,12 +1,17 @@
-<div class="row ">
-  <form class="col s12">
-    <mz-input-container class="col s12">
-        <input mz-input
-          [label]="'Email'"
-          id="email-input"
-          placeholder="Enter your email"
-          length="150"
-          type="email">
-      </mz-input-container>
-  </form>
+<div class="row">
+  <mz-input-container class="col s12 m6">
+    <input mz-input
+      [label]="'Titre'"
+      id="title-input"
+      length="100"
+      type="text"/>
+  </mz-input-container>
+  <mz-textarea-container class="col s12 m6">
+    <textarea mz-textarea
+      [label]="'Description'"
+      id="description-textarea"
+      length="250"
+      type="text">
+    </textarea>
+  </mz-textarea-container>
 </div>
