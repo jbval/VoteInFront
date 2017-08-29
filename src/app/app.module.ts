@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 
 import { routes } from './app.router';
 import { AboutComponent } from './about/about.component';
+import { PollComponent} from './poll/poll.component';
+import { CreatePollComponent } from './poll/create/createPoll.component';
 
 
 
@@ -16,7 +18,9 @@ import { AboutComponent } from './about/about.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    PollComponent,
+    CreatePollComponent,
   ],
   imports: [
     BrowserModule,
