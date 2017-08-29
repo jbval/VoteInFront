@@ -12,9 +12,6 @@ import { AboutComponent } from './about/about.component';
 import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -10,14 +10,15 @@ export const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
-    /*{ 
+    { 
         path: 'poll', 
         component: PollComponent,
         children: [
-            {path:'create', component:CreatePollComponent}
+            {path:'create', component:CreatePollComponent},
+            //{path:':id', }
         ]
-    },*/
-    { path: 'poll/create', component: CreatePollComponent },
+    },
+    /*{ path: 'poll/create', component: CreatePollComponent },*/
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRoutes);
