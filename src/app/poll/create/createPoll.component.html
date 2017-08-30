@@ -1,5 +1,5 @@
-<div>
-  <form (ngSubmit)="onSubmit()" novalidate>
+<!-- <div>
+  <form novalidate>
 
     <mz-card
       [hoverable]="true">
@@ -56,7 +56,7 @@
         <mz-card
         [hoverable]="true">
           <mz-card-title>
-              <button mz-button float="true">
+              <button mz-button float="true" (click)="addEmptyProposition()">
                   <i mz-icon-mdi
                   [align]="'right'"
                   [icon]="'plus'"
@@ -66,70 +66,48 @@
             Propositions
           </mz-card-title>
           <mz-card-content>
+          -->
+          <a class="waves-effect waves-light btn" (click)="addEmptyProposition()">Ajouter</a>
+            <ul class="collapsible" data-collapsible="accordion">
+              <li *ngFor = "let proposition of propositions; let i = index;">
+                <div class="collapsible-header">
+                    {{proposition.Name}}
+                </div>
+                <div class="collapsible-body">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="proposition-name-{{i}}-input" type="text" class="validate" [(ngModel)]="proposition.Name">
+                      <label for="proposition-name-{{i}}-input" data-error="wrong" data-success="right">Nom de la proposition</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea" [(ngModel)]="proposition.Description"></textarea>
+                      <label for="proposition-description-{{i}}-textarea">Description</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <!--
               <mz-collapsible
-              [onClose]="closeFunctionCallback"
-              [onOpen]="openFunctionCallback"
               [popout]="false">
-              <mz-collapsible-item [active]="true">
+              <mz-collapsible-item [active]="true" >
                 <mz-collapsible-item-header>
-                  Proposition 1    
+                  {{proposition.Name}}
                 </mz-collapsible-item-header>
                 <mz-collapsible-item-body>
                     <mz-input-container>
-                        <input mz-input
-                          [label]="'Nom de la proposition'"
-                          id="proposition1-input"
+                        <input 
+                          name="proposition-name-{{in}}"
+                          [(ngModel)]="proposition.Name"
+                          label="Nom de la proposition"
                           length="100"
                           type="text"/>
                     </mz-input-container>
                     <mz-textarea-container class="col s12 m12">
-                      <textarea mz-textarea
-                        [label]="'Description de la proposition'"
-                        id="proposition-desc1-textarea"
-                        length="250"></textarea>
+                      
                     </mz-textarea-container>
                 </mz-collapsible-item-body>
               </mz-collapsible-item>
-              <mz-collapsible-item [active]="true">
-                <mz-collapsible-item-header>
-                  Proposition 2    
-                </mz-collapsible-item-header>
-                <mz-collapsible-item-body>
-                    <mz-input-container>
-                        <input mz-input
-                          [label]="'Nom de la proposition'"
-                          id="proposition1-input"
-                          length="100"
-                          type="text"/>
-                    </mz-input-container>
-                    <mz-textarea-container class="col s12 m12">
-                      <textarea mz-textarea
-                        [label]="'Description de la proposition'"
-                        id="proposition-desc1-textarea"
-                        length="250"></textarea>
-                    </mz-textarea-container>
-                </mz-collapsible-item-body>
-              </mz-collapsible-item>
-                <mz-collapsible-item [active]="true">
-                  <mz-collapsible-item-header>
-                    Proposition 3  
-                  </mz-collapsible-item-header>
-                  <mz-collapsible-item-body>
-                      <mz-input-container>
-                          <input mz-input
-                            [label]="'Nom de la proposition'"
-                            id="proposition1-input"
-                            length="100"
-                            type="text"/>
-                      </mz-input-container>
-                      <mz-textarea-container class="col s12 m12">
-                        <textarea mz-textarea
-                          [label]="'Description de la proposition'"
-                          id="proposition-desc1-textarea"
-                          length="250"></textarea>
-                      </mz-textarea-container>
-                  </mz-collapsible-item-body>
-                </mz-collapsible-item>
             </mz-collapsible>
           </mz-card-content>
         </mz-card>
@@ -143,4 +121,4 @@
       </mz-card-action>
     </mz-card>
   </form>
-</div>
+</div> -->
