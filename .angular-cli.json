@@ -21,7 +21,7 @@
       "styles": [
         "styles.sass",
         "../node_modules/materialize-css/dist/css/materialize.css",
-        "../node_modules/mdi/css/materialdesignicons.css"
+        "../node_modules/mdi/css/materialdesignicons.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
