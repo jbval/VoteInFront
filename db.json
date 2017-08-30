@@ -1,4 +1,21 @@
 {
+  "scrutin": [
+    {
+      "Propositions": [
+        {
+          "Id": 0,
+          "Name": "première proposition",
+          "Description": "description de la première proposition"
+        },
+        {
+          "Id": 0,
+          "Name": "deuxième proposition",
+          "Description": "description de la deuxième proposition"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "id": 1,

@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from "angular2-materialize";
 import { routes } from './app.router';
 import { FormsModule } from '@angular/forms'; 
-
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +12,9 @@ import { AboutComponent } from './about/about.component';
 import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
 import { VotePollComponent } from './poll/vote/votePoll.component';
+
+import { ScrutinApiService } from './services/api/scrutinApi.service';
+import { SharedService } from './services/shared.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,11 @@ import { VotePollComponent } from './poll/vote/votePoll.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpModule,
     MaterializeModule.forRoot(),
     routes
   ],
-  providers: [],
+  providers: [ScrutinApiService,SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
