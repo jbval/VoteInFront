@@ -93,7 +93,7 @@ export abstract class GenericApiService {
             this.sharedService.successToast(error.json().ExceptionMessage);
         }
         else {
-            this.sharedService.successToast('Erreur Serveur');
+            this.sharedService.errorToast('Erreur Serveur');
         }
         return Observable.throw( (error.json ? error.json().error : error) || 'Server error');
     }

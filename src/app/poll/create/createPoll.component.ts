@@ -3,6 +3,7 @@ import { Proposition } from '../../model/proposition';
 import { Scrutin } from '../../model/scrutin';
 import { NgForm } from '@angular/forms';
 import { ScrutinApiService } from '../../services/api/scrutinApi.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-create',
@@ -15,7 +16,7 @@ export class CreatePollComponent implements OnInit {
   private dateCloture: Date;
   private description: string;
   
-  constructor(private scrutinApiService:ScrutinApiService) { }
+  constructor(private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
   ngOnInit() {
     this.propositions = new Array<Proposition>();
@@ -51,7 +52,7 @@ export class CreatePollComponent implements OnInit {
   addEmptyProposition(){
     var p = new Proposition();
     p.Id = 0;
-    p.Name = "Nouvelle proposition";
+    p.Name = "";
     p.Description = "";
     this.propositions.push(p);
   }
@@ -61,5 +62,9 @@ export class CreatePollComponent implements OnInit {
     if (index > -1) {
       this.propositions.splice(index, 1);
     }
+  }
+
+  isLoading(){
+    return this.sharedService.loading;
   }
 }

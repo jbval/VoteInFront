@@ -19,14 +19,12 @@ export class SharedService {
 
     startLoading() {
         this.countLoading++;
-        //console.log(this.countLoading, '++');
         setTimeout(() => {
             this.loading = true;
         }, 0);
     }
     endLoading() {
         this.countLoading = Math.max(0, this.countLoading - 1);
-        //console.log(this.countLoading, '--');
         if (this.countLoading == 0) {
             setTimeout(() => {
                 this.loading = false;
@@ -35,7 +33,11 @@ export class SharedService {
     }
 
     //Toastr
-    successToast(txt: string, title?: string) {
-        Materialize.toast(txt);
+    successToast(txt: string) {
+        Materialize.toast(txt,2000,'rounded teal darken-1');
+    }
+
+    errorToast(txt: string) {
+        Materialize.toast(txt,2000,'rounded red darken-1');
     }
 }
