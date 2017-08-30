@@ -1,17 +1,146 @@
-<div class="row">
-  <mz-input-container class="col s12 m6">
-    <input mz-input
-      [label]="'Titre'"
-      id="title-input"
-      length="100"
-      type="text"/>
-  </mz-input-container>
-  <mz-textarea-container class="col s12 m6">
-    <textarea mz-textarea
-      [label]="'Description'"
-      id="description-textarea"
-      length="250"
-      type="text">
-    </textarea>
-  </mz-textarea-container>
+<div>
+  <form (ngSubmit)="onSubmit()" novalidate>
+
+    <mz-card
+      [hoverable]="true">
+      <mz-card-title>
+        Création d'un scrutin
+      </mz-card-title>
+      <mz-card-content>
+          <mz-checkbox-container class="col s12 m6">
+              <input mz-checkbox
+                [label]="'Election privée'"
+                id="private-check"
+                type="checkbox"/>
+            </mz-checkbox-container>
+        <mz-card
+        [hoverable]="true">
+          <mz-card-title>
+            Informations générales
+          </mz-card-title>
+          <mz-card-content>
+            <div class="row">
+                <mz-input-container class="col s12 m4">
+                    <input mz-input
+                      [label]="'Titre'"
+                      id="title-input"
+                      length="100"
+                      type="text"/>
+                </mz-input-container>
+                <mz-select-container class="col s12 m4">
+                  <select mz-select
+                    id="pollType-select"
+                    [label]="'Type de scrutin'"
+                    [placeholder]="'Aucun'"
+                  >
+                    <option class="left circle">Option 1</option>
+                    <option class="left circle">Option 2</option>
+                    <option class="left circle">Option 3</option>
+                  </select>
+                </mz-select-container>
+                <mz-input-container class="col s12 m4">
+                  <input mz-input type="date" />
+                </mz-input-container>
+            </div>
+            <div class="row">
+                <mz-textarea-container class="col s12 m12">
+                  <textarea mz-textarea
+                    [label]="'Description'"
+                    id="description-textarea"
+                    length="250"></textarea>
+                </mz-textarea-container>
+                
+            </div> 
+        </mz-card-content>
+      </mz-card>
+        <mz-card
+        [hoverable]="true">
+          <mz-card-title>
+              <button mz-button float="true">
+                  <i mz-icon-mdi
+                  [align]="'right'"
+                  [icon]="'plus'"
+                  [size]="'medium'">
+                </i>
+              </button>
+            Propositions
+          </mz-card-title>
+          <mz-card-content>
+              <mz-collapsible
+              [onClose]="closeFunctionCallback"
+              [onOpen]="openFunctionCallback"
+              [popout]="false">
+              <mz-collapsible-item [active]="true">
+                <mz-collapsible-item-header>
+                  Proposition 1    
+                </mz-collapsible-item-header>
+                <mz-collapsible-item-body>
+                    <mz-input-container>
+                        <input mz-input
+                          [label]="'Nom de la proposition'"
+                          id="proposition1-input"
+                          length="100"
+                          type="text"/>
+                    </mz-input-container>
+                    <mz-textarea-container class="col s12 m12">
+                      <textarea mz-textarea
+                        [label]="'Description de la proposition'"
+                        id="proposition-desc1-textarea"
+                        length="250"></textarea>
+                    </mz-textarea-container>
+                </mz-collapsible-item-body>
+              </mz-collapsible-item>
+              <mz-collapsible-item [active]="true">
+                <mz-collapsible-item-header>
+                  Proposition 2    
+                </mz-collapsible-item-header>
+                <mz-collapsible-item-body>
+                    <mz-input-container>
+                        <input mz-input
+                          [label]="'Nom de la proposition'"
+                          id="proposition1-input"
+                          length="100"
+                          type="text"/>
+                    </mz-input-container>
+                    <mz-textarea-container class="col s12 m12">
+                      <textarea mz-textarea
+                        [label]="'Description de la proposition'"
+                        id="proposition-desc1-textarea"
+                        length="250"></textarea>
+                    </mz-textarea-container>
+                </mz-collapsible-item-body>
+              </mz-collapsible-item>
+                <mz-collapsible-item [active]="true">
+                  <mz-collapsible-item-header>
+                    Proposition 3  
+                  </mz-collapsible-item-header>
+                  <mz-collapsible-item-body>
+                      <mz-input-container>
+                          <input mz-input
+                            [label]="'Nom de la proposition'"
+                            id="proposition1-input"
+                            length="100"
+                            type="text"/>
+                      </mz-input-container>
+                      <mz-textarea-container class="col s12 m12">
+                        <textarea mz-textarea
+                          [label]="'Description de la proposition'"
+                          id="proposition-desc1-textarea"
+                          length="250"></textarea>
+                      </mz-textarea-container>
+                  </mz-collapsible-item-body>
+                </mz-collapsible-item>
+            </mz-collapsible>
+          </mz-card-content>
+        </mz-card>
+      </mz-card-content>
+      <mz-card-action>
+          <div class="right-align">
+            <button mz-button>
+                Valider
+            </button>
+          </div>
+      </mz-card-action>
+    </mz-card>
+  </form>
 </div>
