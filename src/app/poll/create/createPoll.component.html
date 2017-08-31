@@ -12,24 +12,52 @@
                         <div class="switch">
                           <label>
                             privé
-                            <input type="checkbox">
+                            <input [(ngModel)]="poll.Public" name="poll-public-checkbox" type="checkbox">
                             <span class="lever"></span>
                             public
                           </label>
                         </div>
+                        <!-- Dropdown Trigger -->
                         <div class="input-field">
-                          <input id="poll-title-text" type="text" class="datepicker" 
-                          [(ngModel)]="title" name="poll-title-text">
+                          <a class='dropdown-button btn' href='#' data-activates='dropdown-mode-scrutin'>{{ poll.Mode != null ? poll.Mode.Nom : "mode de scrutin" }}</a>
+                          <!-- Dropdown Structure -->
+                          <ul id='dropdown-mode-scrutin' class='dropdown-content'>
+                            <li *ngFor="let mode of modesScrutin" [value]="mode.Id">
+                              <a (click)="updateModeScrutin(mode);">{{ mode.Nom }}</a>
+                            </li>
+                            <!-- <li class="divider"></li>
+                            <li><a href="#!">three</a></li>
+                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+                          </ul>
+                        </div>
+                        <!-- <div class="input-field">
+                          <pre>{{modesScrutin|json}}</pre>
+                            <select id="poll-mode-select" materialize="material_select">
+                              <option value="" disabled selected>Selectionnez un mode</option>
+                              <option value="1">Option 1</option>
+                              <option *ngFor="let mode of modesScrutin" [value]="mode.Id">{{ mode.Nom }}</option>
+                            </select>
+                            <label for="poll-mode-select">Mode de scrutin</label>
+                        </div> -->
+                        <div class="input-field">
+                          <input id="poll-title-text" type="text"
+                          [(ngModel)]="poll.Titre" name="poll-title-text">
                           <label for="poll-title-text">Titre du scrutin</label>
                         </div>
                         <div class="input-field">
-                          <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate" 
-                          [(ngModel)]="dateCloture" name="poll-close-datepicker">
+                            <input id="poll-open-datepicker" type="date" class="datepicker" materialize="pickadate"
+                            [(ngModel)]="poll.DateOuverture" name="poll-open-datepicker">
+                            <label for="poll-open-datepicker">Date d'ouverture du scrutin</label>
+                          </div>
+                        <div class="input-field">
+                          <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate"
+                          [(ngModel)]="poll.DateCloture" name="poll-close-datepicker">
                           <label for="poll-close-datepicker">Date de cloture du scrutin</label>
                         </div>
                         <div class="input-field">
                           <textarea id="description-textarea" class="materialize-textarea"
-                          [(ngModel)]="description" name="description-textarea"></textarea>
+                          [(ngModel)]="poll.Description" name="description-textarea"></textarea>
                           <label for="description-textarea" >Description du scrutin</label>
                         </div>
                     </div>
@@ -42,19 +70,19 @@
                         <span class="card-title">Propositions</span>
                       </div>
                         <ul class="collapsible" data-collapsible="accordion">
-                          <li *ngFor = "let proposition of propositions; let i = index;">
+                          <li *ngFor = "let proposition of poll.Propositions; let i = index;">
                             <div class="collapsible-header">
                                 {{proposition.Name == "" ? "Vide" : proposition.Name}}
                             </div>
                             <div class="collapsible-body center-align">
                               <div class="row">
                                 <div class="input-field">
-                                  <input id="proposition-name-{{i}}-input" type="text" 
+                                  <input id="proposition-name-{{i}}-input" type="text"
                                   [(ngModel)]="proposition.Name" name="proposition-name-{{i}}-input">
                                   <label for="proposition-name-{{i}}-input" >Nom de la proposition</label>
                                 </div>
                                 <div class="input-field">
-                                  <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea" 
+                                  <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea"
                                   [(ngModel)]="proposition.Description" name="proposition-description-{{i}}-textarea"></textarea>
                                   <label for="proposition-description-{{i}}-textarea">Description</label>
                                 </div>

@@ -14,6 +14,7 @@ import { CreatePollComponent } from './poll/create/createPoll.component';
 import { VotePollComponent } from './poll/vote/votePoll.component';
 
 import { ScrutinApiService } from './services/api/scrutinApi.service';
+import { ModeScrutinApiService } from './services/api/modeScrutinApi.service';
 import { SharedService } from './services/shared.service';
 
 @NgModule({
@@ -33,7 +34,7 @@ import { SharedService } from './services/shared.service';
     MaterializeModule.forRoot(),
     routes
   ],
-  providers: [ScrutinApiService,SharedService],
+  providers: [ScrutinApiService,ModeScrutinApiService,SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
