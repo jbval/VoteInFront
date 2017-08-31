@@ -1,3 +1,50 @@
-<p>
-  vote works!
-</p>
+<header *ngIf="scrutin">
+  <h5>{{ scrutin.title }}</h5>
+  <p>par Auteur - il y a 00 min - se termine le 00/00/0000</p>
+  <p>{{ scrutin.description }}</p>
+</header> 
+<section class="collapsible-container" *ngIf="scrutin">
+  <ul class="collapsible popout no-border" data-collapsible="accordion">
+    <li *ngFor="let proposition of scrutin.Propositions"> 
+      <div class="collapsible-header valign-wrapper">
+          <div class="header-container">
+              <div class="row valign-wrapper">
+                  <div class="col s6 m6 l8">
+                    <div class="row valign-wrapper">
+                      <div class="col img-container">
+                          <img src="assets/profil-candidate50x50.png" class="circle">
+                      </div>
+                      <div class="col">
+                        <p class="name-candidate">
+                          {{ proposition.Name }} {{ key }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s6 m6 l4">
+                    <div>
+                      <a (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown">Excellent</a>
+                      <ul id='dropdown' class='dropdown-content'>
+                        <li><a (click)="$event.stopPropagation()" class="grade-excellent">Excellent</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-very-good">Très bien</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-good">Bien</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-fairly-well">Assez bien</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-fair">Passable</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-insufficient">Insuffisant</a></li>
+                        <li class="divider"></li>
+                        <li><a (click)="$event.stopPropagation()" class="grade-to-reject">A rejeter</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+      <div class="collapsible-body no-border"><p>{{ proposition.Description }}</p></div>
+    </li>
+  </ul>
+</section>  

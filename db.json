@@ -34,6 +34,70 @@
         "Nom": "Proportionnel"
       },
       "id": 2
+    },
+    {
+      "Propositions": [
+        {
+          "Id": 0,
+          "Name": "Emmanuel Macron",
+          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+        },
+        {
+          "Id": 1,
+          "Name": "jean-luc Mélenchon",
+          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+        },
+        {
+          "Id": 2,
+          "Name": "Marine le pen",
+          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+        }
+      ],
+      "id": 3,
+      "title": "Election présidentielle",
+      "dateCloture": "",
+      "description": "Simulation des élections présidentielles en jugement majoritaire",
+      "ModeScrutin": {
+        "Id": 0,
+        "Nom": "Majoritaire",
+        "Choix": [
+          {
+            "Id": 1,
+            "Nom": "Excellent",
+            "Valeur": 6
+          },
+          {
+            "Id": 2,
+            "Nom": "Très bien",
+            "Valeur": 5
+          },
+          {
+            "Id": 3,
+            "Nom": "Bien",
+            "Valeur": 4
+          },
+          {
+            "Id": 4,
+            "Nom": "Assez bien",
+            "Valeur": 3
+          },
+          {
+            "Id": 5,
+            "Nom": "Passable",
+            "Valeur": 2
+          },
+          {
+            "Id": 6,
+            "Nom": "Insuffisant",
+            "Valeur": 1
+          },
+          {
+            "Id": 7,
+            "Nom": "A rejeter",
+            "Valeur": 0
+          }
+        ]
+      }
     }
   ],
   "modeScrutin": [
@@ -44,117 +108,6 @@
     {
       "Id": 2,
       "Nom": "Proportionnel"
-    }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "body": "json-server",
-      "timestamp": 1499174267408,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "body": "json-server",
-      "timestamp": 1499174267408,
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "title": "json-server",
-      "body": "json-server",
-      "timestamp": 1499174267408,
-      "userId": 1
-    },
-    {
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus ante auctor viverra rutrum. Sed pulvinar nulla ut fringilla malesuada. Maecenas placerat purus vel posuere sollicitudin. Curabitur non eros id enim vulputate egestas. Maecenas lorem erat, ullamcorper egestas ligula quis, ornare bibendum turpis. Praesent pellentesque arcu at purus bibendum feugiat ultrices sed elit. Vivamus nec condimentum metus, id tempus lectus. Sed tempor purus arcu, sed elementum magna varius non. Maecenas bibendum, mauris eu commodo malesuada, felis tortor condimentum nunc, et sollicitudin lorem sapien sed odio. In sem erat, viverra consectetur nunc cursus, tristique tempor elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      "title": "Lorem ipsum",
-      "userId": 1,
-      "timestamp": 1499240407189,
-      "id": 9
-    },
-    {
-      "title": "qdsfqsdf",
-      "body": "qsdfqsdfqdf",
-      "userId": 1,
-      "timestamp": 1499267557181,
-      "id": 10
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1,
-      "userId": 1
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "gperouffe"
-    },
-    {
-      "username": "Label",
-      "id": 2
-    },
-    {
-      "username": "test",
-      "id": 3
-    },
-    {
-      "username": "rest",
-      "id": 4
-    },
-    {
-      "username": "Hety",
-      "id": 5
-    },
-    {
-      "username": "blbl",
-      "id": 6
-    },
-    {
-      "username": "resr",
-      "id": 7
-    },
-    {
-      "username": "qsdf",
-      "id": 8
-    },
-    {
-      "username": "tret",
-      "id": 9
-    },
-    {
-      "username": "reaz",
-      "id": 10
-    },
-    {
-      "username": "qdsf",
-      "id": 11
-    },
-    {
-      "username": "azer",
-      "id": 12
-    },
-    {
-      "username": "qsd",
-      "id": 13
-    },
-    {
-      "username": "sdfg",
-      "id": 14
-    },
-    {
-      "username": "hhhh",
-      "id": 15
-    },
-    {
-      "username": "Orkad",
-      "id": 16
     }
   ]
 }
