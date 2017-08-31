@@ -8,6 +8,7 @@ export class Scrutin { constructor(){}
     DateCloture: Date;
     DateOuverture: Date;
     Description: string;
+    ModeScrutin: ModeScrutin;
     Propositions: Proposition[];
 }
 
@@ -16,7 +17,7 @@ export class ModeScrutin {
     Nom: string;
 }
 
-export class ModeScrutinAvecChoix extends ModeScrutin{
+export class ModeScrutinAvecChoix extends ModeScrutin {
     Choix: Choix[];
 }
 
