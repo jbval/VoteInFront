@@ -16,6 +16,7 @@ import { ProportionalComponent } from './poll/vote/proportional/proportional.com
 
 import { ScrutinApiService } from './services/api/scrutinApi.service';
 import { ModeScrutinApiService } from './services/api/modeScrutinApi.service';
+import { VoteApiService } from './services/api/voteApi.service';
 import { SharedService } from './services/shared.service';
 
 @NgModule({
@@ -36,7 +37,7 @@ import { SharedService } from './services/shared.service';
     MaterializeModule.forRoot(),
     routes
   ],
-  providers: [ScrutinApiService,ModeScrutinApiService,SharedService],
+  providers: [ScrutinApiService,ModeScrutinApiService,SharedService, VoteApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

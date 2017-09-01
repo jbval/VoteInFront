@@ -17,7 +17,7 @@
                     </div>
                   </div>
                   <div class="col s6 m6 l4">
-                    <!-- Bouton checked -->
+                      <button (click)="$event.stopPropagation(); selectCandidate(proposition)" class='dropdown-button btn btn-grade grade-excellent'>Voter</button>
                   </div>
                 </div>
           </div>
@@ -25,4 +25,5 @@
       <div class="collapsible-body no-border"><p>{{ proposition.description }}</p></div>
     </li>
   </ul>
+  <button [disabled]="isVote()" (click)="vote(voteProportionnel)" class="btn waves-effect waves-light" name="action">Soumettre</button>
 </section>  
