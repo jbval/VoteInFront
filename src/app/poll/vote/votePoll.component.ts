@@ -1,7 +1,7 @@
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Scrutin,Proposition } from '../../model/model';
+import { Scrutin, Proposition } from '../../model/model';
 
 import { ScrutinApiService } from '../../services/api/scrutinApi.service';
 import { SharedService } from '../../services/shared.service';
