@@ -4,19 +4,21 @@ import { Component, OnInit } from '@angular/core';
 import { Proposition } from '../../model/proposition';
 import { Scrutin } from '../../model/scrutin';
 
-import { ScrutinApiService } from '../../services/api/scrutinApi.service';
-import { SharedService } from '../../services/shared.service';
+import { ScrutinApiService } from '../../../services/api/scrutinApi.service';
+import { SharedService } from '../../../services/shared.service';
 
 import { $ } from "jquery";
 
 @Component({
-  selector: 'app-vote',
-  templateUrl: './votePoll.component.html',
-  styleUrls: ['./votePoll.component.sass']
+  selector: 'app-majority',
+  templateUrl: './majority.component.html',
+  styleUrls: ['./majority.component.sass']
 })
-export class VotePollComponent implements OnInit {
+export class MajorityComponent implements OnInit {
   private pollId: string;
   private scrutin: Scrutin = new Scrutin;
+  private buttonValue: String = "Voter";
+  //private voteComplexe: VoteComplexe
   
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
@@ -34,4 +36,15 @@ export class VotePollComponent implements OnInit {
   ngAfterViewInit(){
     
   }
+
+  openDropdown(index: string) {
+    $('.dropdown-button').dropdown('open');
+  }
+
+  selectGrade(proposition: Proposition, choix: Choix) {
+    this.buttonValue = grade;
+    this.voteComplexe.Acte.Choix = choix;
+    console.log(proposition);
+  }
+
 }

@@ -8,10 +8,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
 import { VotePollComponent } from './poll/vote/votePoll.component';
+import { MajorityComponent } from './poll/vote/majority/majority.component';
 
 import { ScrutinApiService } from './services/api/scrutinApi.service';
 import { ModeScrutinApiService } from './services/api/modeScrutinApi.service';
@@ -21,8 +21,8 @@ import { SharedService } from './services/shared.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     PollComponent,
+    MajorityComponent,
     CreatePollComponent,
     VotePollComponent,
   ],
