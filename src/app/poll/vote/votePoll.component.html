@@ -1,9 +1,14 @@
-<header class="container">
-  <h5>{{ scrutin.title }}</h5>
+<header class="center">
+  <h5>{{ scrutin.titre }}</h5>
   <p>par Auteur - il y a 00 min - se termine le 00/00/0000</p>
   <p>{{ scrutin.description }}</p>
 </header>
-<article class="container">
+<article>
   <app-majority *ngIf="scrutin?.mode?.nom == 'Majoritaire'"></app-majority>
-  <app-proportional *ngIf="scrutin?.mode?.nom == 'Proportionnel'"></app-proportional>      
+  <app-proportional *ngIf="scrutin?.mode?.nom == 'Proportionnel'"></app-proportional>
+  <div class="row center">
+    <a class="waves-effect waves-light btn" routerLink="/poll">
+        Retour
+    </a>  
+  </div>      
 </article> 
