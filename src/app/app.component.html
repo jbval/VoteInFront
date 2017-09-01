@@ -1,21 +1,42 @@
 
 <nav class="">
-    <div class="nav-wrapper blue-grey darken-1">
-      <a href="#!" class="brand-logo">VoteIn</a>
+    <div class="nav-wrapper bg-primary-blue">
+      <a href="#!" class="brand-logo">
+        <img src="assets/images/logo-votein.png">
+        <span>VoteIn</span>
+      </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-        <li><a href="">Scrutins</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="">Scrutins</a></li>
         </ul>
     </div>
   </nav>
 
     <!--Injection des différents components ici-->
 <router-outlet></router-outlet>
+
+<footer class="page-footer bg-primary-blue">
+  <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2017 Copyright Apollo SSC
+    <a class="grey-text text-lighten-4 right" href="http://apollossc.com">Apollo SSC</a>
+    </div>
+  </div>
+</footer>
