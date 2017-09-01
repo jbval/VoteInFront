@@ -330,6 +330,68 @@
         "description": "description de la première proposition"
       },
       "id": 1
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 3,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 4,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "titre": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 3,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 2
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 3,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 4,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "titre": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 3,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 3
     }
   ]
 }
