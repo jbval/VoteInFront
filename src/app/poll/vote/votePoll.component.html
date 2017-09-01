@@ -1,10 +1,10 @@
-<header *ngIf="scrutin">
+<header>
   <h5>{{ scrutin.title }}</h5>
   <p>par Auteur - il y a 00 min - se termine le 00/00/0000</p>
   <p>{{ scrutin.description }}</p>
 </header> 
-<section class="collapsible-container" *ngIf="scrutin">
-  <ul class="collapsible popout no-border" data-collapsible="accordion">
+<section class="collapsible-container">
+  <ul materialize="collapsible" class="collapsible popout no-border" data-collapsible="accordion">
     <li *ngFor="let proposition of scrutin.Propositions"> 
       <div class="collapsible-header valign-wrapper">
           <div class="header-container">
@@ -16,28 +16,29 @@
                       </div>
                       <div class="col">
                         <p class="name-candidate">
-                          {{ proposition.Name }} {{ key }}
+                          {{ proposition.Name }}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="col s6 m6 l4">
                     <div>
-                      <a (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown">Excellent</a>
-                      <ul id='dropdown' class='dropdown-content'>
-                        <li><a (click)="$event.stopPropagation()" class="grade-excellent">Excellent</a></li>
+                      <a materialize="dropdown" (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown" ngValue="voter">{{getLibelleChoix(proposition)}}</a>
+                      <ul id='dropdown{{index}}' class='dropdown-content'>
+                        <!-- Boucle sur les choix --> 
+                        <li><a (click)="$event.stopPropagation();selectGrade(proposition, choix)" value="7" class="grade-excellent">Excellent</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-very-good">Très bien</a></li>
+                        <li><a (click)="$event.stopPropagation()" value="6" class="grade-very-good">Très bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-good">Bien</a></li>
+                        <li><a (click)="$event.stopPropagation();selectGrade('Bien')" value="5" class="grade-good">Bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-fairly-well">Assez bien</a></li>
+                        <li><a (click)="$event.stopPropagation()" value="4" class="grade-fairly-well">Assez bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-fair">Passable</a></li>
+                        <li><a (click)="$event.stopPropagation();selectGrade('Passable')" value="3" class="grade-fair">Passable</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-insufficient">Insuffisant</a></li>
+                        <li><a (click)="$event.stopPropagation();selectGrade('Insuffisant')" value="2" class="grade-insufficient">Insuffisant</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" class="grade-to-reject">A rejeter</a></li>
+                        <li><a (click)="$event.stopPropagation()" value="1" class="grade-to-reject">A rejeter</a></li>
                       </ul>
                     </div>
                   </div>

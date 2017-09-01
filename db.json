@@ -102,12 +102,12 @@
   ],
   "modeScrutin": [
     {
-      "Id": 1,
-      "Nom": "Majoritaire"
+      "id": 1,
+      "nom": "Majoritaire"
     },
     {
-      "Id": 2,
-      "Nom": "Proportionnel"
+      "id": 2,
+      "nom": "Proportionnel"
     }
   ]
 }
