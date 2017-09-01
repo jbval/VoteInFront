@@ -12,8 +12,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  goToCreatePoll(){
-    this.router.navigate(["poll/create"]);
-  }
 }

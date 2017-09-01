@@ -24,12 +24,4 @@ export class PollComponent implements OnInit {
         this.pollList = res;
       });
   };
-
-  navigateTo(route:string){
-    this.router.navigate([route]);
-  };
-
-  goToVote(scrutinId:number){
-    this.router.navigate(["poll/"+scrutinId]);
-  };
 }
