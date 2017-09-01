@@ -28,15 +28,14 @@ export class CreatePollComponent implements OnInit {
 			err => console.log(err)
 		);
 		this.poll.propositions = new Array<Proposition>();
-		this.poll.dateOuverture = new Date(Date.now());
 		var p = new Proposition();
 		p.id = 0;
-		p.name = "première proposition";
+		p.nom = "première proposition";
 		p.description = "description de la première proposition";
 		this.poll.propositions.push(p);
 		var p = new Proposition();
 		p.id = 0;
-		p.name = "deuxième proposition";
+		p.nom = "deuxième proposition";
 		p.description = "description de la deuxième proposition";
 		this.poll.propositions.push(p);
 	}
@@ -56,7 +55,7 @@ export class CreatePollComponent implements OnInit {
 	addEmptyProposition(){
 		var p = new Proposition();
 		p.id = 0;
-		p.name = "";
+		p.nom = "";
 		p.description = "";
 		this.poll.propositions.push(p);
 	}

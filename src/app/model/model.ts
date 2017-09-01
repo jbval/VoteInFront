@@ -1,6 +1,6 @@
 export class Proposition { constructor(){}
     id: number;
-    name: string;
+    nom: string;
     description: string;
 }
 
