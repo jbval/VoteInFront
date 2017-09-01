@@ -13,13 +13,17 @@ import { SharedService } from '../services/shared.service';
 export class PollComponent implements OnInit {
   private pollList:Scrutin[];
 
-  constructor(private scrutinApiService:ScrutinApiService,) { }
+  constructor(private scrutinApiService:ScrutinApiService) {}
 
   ngOnInit() {
     this.scrutinApiService.get().subscribe(
       res => {
         this.pollList = res;
       });
+  }
+
+  paginate(pageNumber:number){
+    
   }
 
 }

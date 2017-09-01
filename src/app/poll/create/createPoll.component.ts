@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Proposition, Scrutin, ModeScrutin } from '../../model/model';
 
@@ -17,8 +18,9 @@ export class CreatePollComponent implements OnInit {
 	private modesScrutin: Array<ModeScrutin>;
 	
 	constructor(private scrutinApiService:ScrutinApiService,
-		 private modeScrutinApiService:ModeScrutinApiService,
-		 private sharedService:SharedService) { }
+		private modeScrutinApiService:ModeScrutinApiService,
+		private sharedService:SharedService,
+		private router:Router) { }
 
 	ngOnInit() {
 		this.modeScrutinApiService.get().subscribe(
@@ -44,7 +46,7 @@ export class CreatePollComponent implements OnInit {
 		if(f.valid){;
 			this.scrutinApiService.create(this.poll).subscribe(
 				res => {
-					console.log("ok");
+					this.router.navigate(["poll"])
 				}, 
 				error =>{
 					console.log("error");
@@ -67,8 +69,8 @@ export class CreatePollComponent implements OnInit {
 		}
 	}
 
-	updateModeScrutin(mode:ModeScrutin){
-		this.poll.mode = mode;
+	updateModeScrutinById(modeId:number){
+		this.poll.mode = this.modesScrutin.filter(m => m.id == modeId)[0];
 	}
 
 	isLoading(){

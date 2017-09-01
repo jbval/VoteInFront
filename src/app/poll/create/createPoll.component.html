@@ -17,10 +17,11 @@
                                 <span class="lever"></span>
                               </label>
                             </div>
-                            <select materialize="material_select" [materializeSelectOptions]="modesScrutin">
+                            <select materialize="material_select" [materializeSelectOptions]="modesScrutin" (change)="updateModeScrutinById($event.target.value)">
                               <option value="" disabled selected>selectionnez un mode de scrutin</option>
-                              <option *ngFor="let mode of modesScrutin" [ngValue]="mode.id" >{{mode.nom}}</option>
+                              <option *ngFor="let mode of modesScrutin" [value]="mode.id" >{{mode.nom}}</option>
                             </select>
+                            <p>{{poll.titre}}</p>
                           <div class="input-field">
                             <input id="poll-title-text" type="text"
                             [(ngModel)]="poll.titre" name="poll-title-text">
