@@ -8,21 +8,24 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
 import { VotePollComponent } from './poll/vote/votePoll.component';
+import { MajorityComponent } from './poll/vote/majority/majority.component';
+import { ProportionalComponent } from './poll/vote/proportional/proportional.component';
 
 import { ScrutinApiService } from './services/api/scrutinApi.service';
 import { ModeScrutinApiService } from './services/api/modeScrutinApi.service';
+import { VoteApiService } from './services/api/voteApi.service';
 import { SharedService } from './services/shared.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     PollComponent,
+    MajorityComponent,
+    ProportionalComponent,
     CreatePollComponent,
     VotePollComponent,
   ],
@@ -34,7 +37,7 @@ import { SharedService } from './services/shared.service';
     MaterializeModule.forRoot(),
     routes
   ],
-  providers: [ScrutinApiService,ModeScrutinApiService,SharedService],
+  providers: [ScrutinApiService,ModeScrutinApiService,SharedService, VoteApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

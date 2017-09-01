@@ -1,7 +1,7 @@
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Scrutin,Proposition } from '../../model/model';
+import { Scrutin, Proposition } from '../../model/model';
 
 import { ScrutinApiService } from '../../services/api/scrutinApi.service';
 import { SharedService } from '../../services/shared.service';
@@ -16,7 +16,7 @@ import { $ } from "jquery";
 export class VotePollComponent implements OnInit {
   private pollId: string;
   private scrutin: Scrutin = new Scrutin;
-  private buttonValue: String = "Voter";
+  private modeMajoritaire: Boolean;
   
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
@@ -28,20 +28,7 @@ export class VotePollComponent implements OnInit {
           this.scrutin = res;
         });
     })
-    
   }
 
-  ngAfterViewInit(){
-    
-  }
-
-  openDropdown(index: string) {
-    $('.dropdown-button').dropdown('open');
-  }
-
-  selectGrade(proposition: Proposition, grade: string) {
-    this.buttonValue = grade;
-    console.log(proposition);
-  }
 
 }

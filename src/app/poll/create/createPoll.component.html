@@ -1,6 +1,6 @@
 <article class="container">
   <form materialize #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-    <div class="row">
+    <div class="row center">
       <div class="col s12">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
@@ -17,22 +17,23 @@
                                 <span class="lever"></span>
                               </label>
                             </div>
-                            <select materialize="material_select" [materializeSelectOptions]="modesScrutin">
-                              <option [value]="null" disabled selected>selectionnez un mode de scrutin</option>
-                              <option *ngFor="let mode of modesScrutin" [value]="mode.Id">{{mode.nom}}</option>
+                            <select materialize="material_select" [materializeSelectOptions]="modesScrutin" (change)="updateModeScrutinById($event.target.value)">
+                              <option value="" disabled selected>selectionnez un mode de scrutin</option>
+                              <option *ngFor="let mode of modesScrutin" [value]="mode.id" >{{mode.nom}}</option>
                             </select>
+                            <p>{{poll.titre}}</p>
                           <div class="input-field">
                             <input id="poll-title-text" type="text"
                             [(ngModel)]="poll.titre" name="poll-title-text">
                             <label for="poll-title-text">Titre du scrutin</label>
                           </div>
                           <div class="input-field">
-                              <input id="poll-open-datepicker" type="date" class="datepicker" materialize="pickadate"
+                              <input id="poll-open-datepicker" type="date" class="datepicker" materialize="pickadate" [materializeParams]="[{format: 'dd/mm/yyyy'}]"
                               [(ngModel)]="poll.dateOuverture" name="poll-open-datepicker">
                               <label for="poll-open-datepicker">Date d'ouverture du scrutin</label>
                             </div>
                           <div class="input-field">
-                            <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate"
+                            <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate" [materializeParams]="[{format: 'dd/mm/yyyy'}]"
                             [(ngModel)]="poll.dateCloture" name="poll-close-datepicker">
                             <label for="poll-close-datepicker">Date de cloture du scrutin</label>
                           </div>
@@ -53,14 +54,14 @@
                           <ul class="collapsible" data-collapsible="accordion">
                             <li *ngFor = "let proposition of poll.propositions; let i = index;">
                               <div class="collapsible-header">
-                                  {{proposition.name == "" ? "Vide" : proposition.name}}
+                                  {{proposition.nom == "" ? "Vide" : proposition.nom}}
                               </div>
                               <div class="collapsible-body center-align">
                                 <div class="row">
                                   <div class="input-field">
-                                    <input id="proposition-name-{{i}}-input" type="text"
-                                    [(ngModel)]="proposition.name" name="proposition-name-{{i}}-input">
-                                    <label for="proposition-name-{{i}}-input" >Nom de la proposition</label>
+                                    <input id="proposition-nom-{{i}}-input" type="text"
+                                    [(ngModel)]="proposition.nom" name="proposition-name-{{i}}-input">
+                                    <label for="proposition-nom-{{i}}-input" >Nom de la proposition</label>
                                   </div>
                                   <div class="input-field">
                                     <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea"

@@ -1,103 +1,292 @@
 {
   "scrutin": [
     {
-      "Propositions": [
+      "propositions": [
         {
-          "Id": 0,
-          "Name": "première proposition",
-          "Description": "description de la première proposition"
+          "id": 0,
+          "name": "première proposition",
+          "description": "description de la première proposition"
         },
         {
-          "Id": 0,
-          "Name": "deuxième proposition",
-          "Description": "description de la deuxième proposition"
+          "id": 0,
+          "name": "deuxième proposition",
+          "description": "description de la deuxième proposition"
         }
       ],
-      "id": 1
-    },
-    {
-      "Propositions": [
-        {
-          "Id": 0,
-          "Name": "première proposition",
-          "Description": "description de la première proposition"
-        },
-        {
-          "Id": 0,
-          "Name": "deuxième proposition",
-          "Description": "description de la deuxième proposition"
-        }
-      ],
-      "DateOuverture": "2017-08-31T09:58:17.490Z",
-      "Mode": {
-        "Id": 2,
-        "Nom": "Proportionnel"
+      "dateOuverture": "2017-08-31T09:58:17.490Z",
+      "mode": {
+        "id": 2,
+        "nom": "Proportionnel"
       },
-      "id": 2
+      "id": 1,
+      "titre": "Election présidentielle 2018",
+      "dateCloture": "",
+      "description": "Simulation des élections présidentielles scrutin majoritaire"
     },
     {
-      "Propositions": [
+      "propositions": [
         {
-          "Id": 0,
-          "Name": "Emmanuel Macron",
-          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+          "id": 0,
+          "name": "première proposition",
+          "description": "description de la première proposition"
         },
         {
-          "Id": 1,
-          "Name": "jean-luc Mélenchon",
-          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+          "id": 0,
+          "name": "deuxième proposition",
+          "description": "description de la deuxième proposition"
+        }
+      ],
+      "dateOuverture": "2017-08-31T09:58:17.490Z",
+      "mode": {
+        "id": 2,
+        "nom": "Proportionnel"
+      },
+      "id": 2,
+      "titre": "Election présidentielle 2016",
+      "dateCloture": "",
+      "description": "Simulation des élections présidentielles scrutin proportionel"
+    },
+    {
+      "propositions": [
+        {
+          "id": 0,
+          "name": "Emmanuel Macron",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
         },
         {
-          "Id": 2,
-          "Name": "Marine le pen",
-          "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+          "id": 1,
+          "name": "jean-luc Mélenchon",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+        },
+        {
+          "id": 2,
+          "name": "Marine le pen",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
         }
       ],
       "id": 3,
-      "title": "Election présidentielle",
+      "titre": "Election présidentielle",
       "dateCloture": "",
       "description": "Simulation des élections présidentielles en jugement majoritaire",
-      "ModeScrutin": {
-        "Id": 0,
-        "Nom": "Majoritaire",
-        "Choix": [
+      "mode": {
+        "id": 0,
+        "nom": "Majoritaire",
+        "choix": [
           {
-            "Id": 1,
-            "Nom": "Excellent",
-            "Valeur": 6
+            "id": 1,
+            "nom": "Excellent",
+            "valeur": 6
           },
           {
-            "Id": 2,
-            "Nom": "Très bien",
-            "Valeur": 5
+            "id": 2,
+            "nom": "Très bien",
+            "valeur": 5
           },
           {
-            "Id": 3,
-            "Nom": "Bien",
-            "Valeur": 4
+            "id": 3,
+            "nom": "Bien",
+            "valeur": 4
           },
           {
-            "Id": 4,
-            "Nom": "Assez bien",
-            "Valeur": 3
+            "id": 4,
+            "nom": "Assez bien",
+            "valeur": 3
           },
           {
-            "Id": 5,
-            "Nom": "Passable",
-            "Valeur": 2
+            "id": 5,
+            "nom": "Passable",
+            "valeur": 2
           },
           {
-            "Id": 6,
-            "Nom": "Insuffisant",
-            "Valeur": 1
+            "id": 6,
+            "nom": "Insuffisant",
+            "valeur": 1
           },
           {
-            "Id": 7,
-            "Nom": "A rejeter",
-            "Valeur": 0
+            "id": 7,
+            "nom": "A rejeter",
+            "valeur": 0
           }
         ]
       }
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "titre": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 4
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "deuxième proposition",
+        "description": "description de la deuxième proposition"
+      },
+      "id": 5
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "titre": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 6
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 7
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 8
+    },
+    {
+      "propositions": [
+        {
+          "id": 0,
+          "nom": "première proposition",
+          "description": "description de la première proposition description de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première propositiondescription de la première proposition"
+        },
+        {
+          "id": 0,
+          "nom": "deuxième proposition",
+          "description": "description de la deuxième proposition"
+        }
+      ],
+      "mode": {
+        "id": 1,
+        "nom": "Majoritaire"
+      },
+      "titre": "Scrutin majoritaire",
+      "dateOuverture": "01/09/2017",
+      "dateCloture": "08/09/2017",
+      "description": "Descritpion d'un scrutin majoritaire avec un petit peu plus de texte la famille.",
+      "id": 9
     }
   ],
   "modeScrutin": [
@@ -109,5 +298,6 @@
       "id": 2,
       "nom": "Proportionnel"
     }
-  ]
+  ],
+  "vote": []
 }

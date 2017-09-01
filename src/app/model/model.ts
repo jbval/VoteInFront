@@ -1,8 +1,6 @@
-
-
 export class Proposition { constructor(){}
     id: number;
-    name: string;
+    nom: string;
     description: string;
 }
 
@@ -22,7 +20,7 @@ export class ModeScrutin {
     nom: string;
 }
 
-export class ModeScrutinComplexe extends ModeScrutin{
+export class ScrutinMajoritaire extends ModeScrutin{
     choix: Choix[]; // les choix POSSIBLE pour chaques propositions d'un scrutin (ex: NUL, MOYEN, EXELENT)
 }
 
@@ -34,21 +32,36 @@ export class Choix {
 
 export abstract class Vote {
     scrutin: Scrutin;
-    scrutinId: number;
+
+    constructor(scrutin: Scrutin) {
+        this.scrutin = scrutin;
+    }
 }
 
-export class VoteSimple extends Vote {
+export class VoteProportionnel extends Vote {
     proposition: Proposition;
-    propositionId: number;
+
+    constructor(scrutin: Scrutin, proposition: Proposition) {
+        super(scrutin);
+        this.proposition = proposition;
+    }
 }
 
-export class VoteComplexe {
-    choix: Acte[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
+export class VoteMajoritaire extends Vote {
+    PropositionChoix: PropositionChoix[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
+
+    constructor(scrutin: Scrutin, propositionChoix: PropositionChoix[]) {
+        super(scrutin);
+        this.PropositionChoix = propositionChoix;
+    }
 }
 
-export class Acte{
-    proposition: Proposition;
+export class PropositionChoix {
     propositionId: number;
-    choix: Choix;
     choixId: number;
+
+    constructor(propositionId: number, choixId: number) {
+        this.propositionId = propositionId;
+        this.choixId = choixId;
+    }
 }
