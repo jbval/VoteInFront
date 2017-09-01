@@ -109,6 +109,161 @@
           }
         ]
       }
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 4
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "deuxième proposition",
+        "description": "description de la deuxième proposition"
+      },
+      "id": 5
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 6
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 7
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 0,
+            "name": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 0,
+            "name": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "title": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 0,
+        "name": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 8
     }
   ],
   "modeScrutin": [
@@ -120,5 +275,6 @@
       "id": 2,
       "nom": "Proportionnel"
     }
-  ]
+  ],
+  "vote": []
 }

@@ -16,7 +16,7 @@ import { $ } from "jquery";
 export class MajorityComponent implements OnInit {
   private pollId: string;
   private scrutin: Scrutin = new Scrutin;
-  private VoteMajoritaire: VoteMajoritaire = new VoteMajoritaire(new Array<PropositionChoix>());
+  private VoteMajoritaire: VoteMajoritaire = new VoteMajoritaire(this.scrutin, new Array<PropositionChoix>());
 
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 

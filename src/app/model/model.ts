@@ -32,18 +32,26 @@ export class Choix {
 
 export abstract class Vote {
     scrutin: Scrutin;
-    scrutinId: number;
+
+    constructor(scrutin: Scrutin) {
+        this.scrutin = scrutin;
+    }
 }
 
 export class VoteProportionnel extends Vote {
-    propositionId: number;
+    proposition: Proposition;
+
+    constructor(scrutin: Scrutin, proposition: Proposition) {
+        super(scrutin);
+        this.proposition = proposition;
+    }
 }
 
 export class VoteMajoritaire extends Vote {
     PropositionChoix: PropositionChoix[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
 
-    constructor(propositionChoix: PropositionChoix[]) {
-        super();
+    constructor(scrutin: Scrutin, propositionChoix: PropositionChoix[]) {
+        super(scrutin);
         this.PropositionChoix = propositionChoix;
     }
 }
