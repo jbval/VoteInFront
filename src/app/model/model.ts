@@ -37,18 +37,18 @@ export abstract class Vote {
     scrutinId: number;
 }
 
-export class VoteSimple extends Vote {
-    proposition: Proposition;
+export class VoteProportionnel extends Vote {
+    //proposition: Proposition;
     propositionId: number;
 }
 
-export class VoteComplexe {
-    choix: Acte[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
+export class VoteMajoritaire extends Vote {
+    choix: PropositionChoix[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
 }
 
-export class Acte{
-    proposition: Proposition;
+export class PropositionChoix {
+    //proposition: Proposition;
     propositionId: number;
-    choix: Choix;
+    //choix: Choix;
     choixId: number;
 }
