@@ -1,5 +1,3 @@
-
-
 export class Proposition { constructor(){}
     id: number;
     name: string;
@@ -38,7 +36,6 @@ export abstract class Vote {
 }
 
 export class VoteProportionnel extends Vote {
-    //proposition: Proposition;
     propositionId: number;
 }
 
@@ -47,8 +44,6 @@ export class VoteMajoritaire extends Vote {
 }
 
 export class PropositionChoix {
-    //proposition: Proposition;
     propositionId: number;
-    //choix: Choix;
     choixId: number;
 }

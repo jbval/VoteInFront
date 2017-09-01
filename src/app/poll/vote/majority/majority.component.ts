@@ -1,7 +1,7 @@
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Scrutin, Proposition, VoteComplexe, Choix, Acte } from '../../../model/model';
+import { Scrutin, Proposition, VoteMajoritaire, Choix, PropositionChoix } from '../../../model/model';
 
 import { ScrutinApiService } from '../../../services/api/scrutinApi.service';
 import { SharedService } from '../../../services/shared.service';
@@ -17,7 +17,7 @@ export class MajorityComponent implements OnInit {
   private pollId: string;
   private scrutin: Scrutin = new Scrutin;
   private buttonValue: String = "Voter";
-  private voteComplexe: VoteComplexe
+  //private voteComplexe: VoteComplexe
   
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
@@ -30,10 +30,6 @@ export class MajorityComponent implements OnInit {
         });
     })
     
-  }
-
-  openDropdown(index: string) {
-    $('.dropdown-button').dropdown('open');
   }
 
   selectGrade(proposition: Proposition, choix: Choix) {
