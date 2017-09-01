@@ -11,7 +11,7 @@ import { SharedService } from '../../services/shared.service';
 @Component({
 	selector: 'app-create',
 	templateUrl: './createPoll.component.html',
-	styleUrls: ['./createPoll.component.css']
+	styleUrls: ['./createPoll.component.sass']
 })
 export class CreatePollComponent implements OnInit {
 	private poll: Scrutin = new Scrutin();
