@@ -1,116 +1,98 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <div class="row">
-    <div class="col s12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Création de scrutin</span>
-          <div class="row">
-              <div class="col s12 m6">
-                  <div class="card">
-                    <div class="card-content black-text">
-                      <span class="card-title">Informations générales</span>
-                        <div class="switch">
-                          <label>
-                            privé
-                            <input [(ngModel)]="poll.Public" name="poll-public-checkbox" type="checkbox">
-                            <span class="lever"></span>
-                            public
-                          </label>
-                        </div>
-                        <!-- Dropdown Trigger -->
-                        <div class="input-field">
-                          <a class='dropdown-button btn' href='#' data-activates='dropdown-mode-scrutin'>{{ poll.Mode != null ? poll.Mode.Nom : "mode de scrutin" }}</a>
-                          <!-- Dropdown Structure -->
-                          <ul id='dropdown-mode-scrutin' class='dropdown-content'>
-                            <li *ngFor="let mode of modesScrutin" [value]="mode.Id">
-                              <a (click)="updateModeScrutin(mode);">{{ mode.Nom }}</a>
-                            </li>
-                            <!-- <li class="divider"></li>
-                            <li><a href="#!">three</a></li>
-                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
-                          </ul>
-                        </div>
-                        <!-- <div class="input-field">
-                          <pre>{{modesScrutin|json}}</pre>
-                            <select id="poll-mode-select" materialize="material_select">
-                              <option value="" disabled selected>Selectionnez un mode</option>
-                              <option value="1">Option 1</option>
-                              <option *ngFor="let mode of modesScrutin" [value]="mode.Id">{{ mode.Nom }}</option>
-                            </select>
-                            <label for="poll-mode-select">Mode de scrutin</label>
-                        </div> -->
-                        <div class="input-field">
-                          <input id="poll-title-text" type="text"
-                          [(ngModel)]="poll.Titre" name="poll-title-text">
-                          <label for="poll-title-text">Titre du scrutin</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="poll-open-datepicker" type="date" class="datepicker" materialize="pickadate"
-                            [(ngModel)]="poll.DateOuverture" name="poll-open-datepicker">
-                            <label for="poll-open-datepicker">Date d'ouverture du scrutin</label>
-                          </div>
-                        <div class="input-field">
-                          <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate"
-                          [(ngModel)]="poll.DateCloture" name="poll-close-datepicker">
-                          <label for="poll-close-datepicker">Date de cloture du scrutin</label>
-                        </div>
-                        <div class="input-field">
-                          <textarea id="description-textarea" class="materialize-textarea"
-                          [(ngModel)]="poll.Description" name="description-textarea"></textarea>
-                          <label for="description-textarea" >Description du scrutin</label>
-                        </div>
-                    </div>
-                  </div>
-                </div>
+<article class="container">
+  <form materialize #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div class="row">
+      <div class="col s12">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Création de scrutin</span>
+            <div class="row">
                 <div class="col s12 m6">
-                  <div class="card">
-                    <div class="card-content black-text">
-                      <div class="valign-wrapper">
-                        <span class="card-title">Propositions</span>
+                    <div class="card">
+                      <div class="card-content black-text">
+                        <span class="card-title">Informations générales</span>
+                            <div class="switch">
+                              <label>
+                                  {{poll.public ? "Public" : "Privé"}}
+                                <input [(ngModel)]="poll.public" name="poll-public-checkbox" type="checkbox">
+                                <span class="lever"></span>
+                              </label>
+                            </div>
+                            <select materialize="material_select" [materializeSelectOptions]="modesScrutin">
+                              <option [value]="null" disabled selected>selectionnez un mode de scrutin</option>
+                              <option *ngFor="let mode of modesScrutin" [value]="mode.Id">{{mode.nom}}</option>
+                            </select>
+                          <div class="input-field">
+                            <input id="poll-title-text" type="text"
+                            [(ngModel)]="poll.titre" name="poll-title-text">
+                            <label for="poll-title-text">Titre du scrutin</label>
+                          </div>
+                          <div class="input-field">
+                              <input id="poll-open-datepicker" type="date" class="datepicker" materialize="pickadate"
+                              [(ngModel)]="poll.dateOuverture" name="poll-open-datepicker">
+                              <label for="poll-open-datepicker">Date d'ouverture du scrutin</label>
+                            </div>
+                          <div class="input-field">
+                            <input id="poll-close-datepicker" type="date" class="datepicker" materialize="pickadate"
+                            [(ngModel)]="poll.dateCloture" name="poll-close-datepicker">
+                            <label for="poll-close-datepicker">Date de cloture du scrutin</label>
+                          </div>
+                          <div class="input-field">
+                            <textarea id="description-textarea" class="materialize-textarea"
+                            [(ngModel)]="poll.description" name="description-textarea"></textarea>
+                            <label for="description-textarea" >Description du scrutin</label>
+                          </div>
                       </div>
-                        <ul class="collapsible" data-collapsible="accordion">
-                          <li *ngFor = "let proposition of poll.Propositions; let i = index;">
-                            <div class="collapsible-header">
-                                {{proposition.Name == "" ? "Vide" : proposition.Name}}
-                            </div>
-                            <div class="collapsible-body center-align">
-                              <div class="row">
-                                <div class="input-field">
-                                  <input id="proposition-name-{{i}}-input" type="text"
-                                  [(ngModel)]="proposition.Name" name="proposition-name-{{i}}-input">
-                                  <label for="proposition-name-{{i}}-input" >Nom de la proposition</label>
-                                </div>
-                                <div class="input-field">
-                                  <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea"
-                                  [(ngModel)]="proposition.Description" name="proposition-description-{{i}}-textarea"></textarea>
-                                  <label for="proposition-description-{{i}}-textarea">Description</label>
-                                </div>
-                                <a class="btn-floating waves-effect waves-light red" (click)="removeProposition(proposition)"><i class="material-icons">delete</i></a>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
                     </div>
-                    <div class="card-action center-align">
-                      <a class="btn-floating waves-effect waves-light" (click)="addEmptyProposition()"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="col s12 m6">
+                    <div class="card">
+                      <div class="card-content black-text">
+                        <div class="valign-wrapper">
+                          <span class="card-title">Propositions</span>
+                        </div>
+                          <ul class="collapsible" data-collapsible="accordion">
+                            <li *ngFor = "let proposition of poll.propositions; let i = index;">
+                              <div class="collapsible-header">
+                                  {{proposition.name == "" ? "Vide" : proposition.name}}
+                              </div>
+                              <div class="collapsible-body center-align">
+                                <div class="row">
+                                  <div class="input-field">
+                                    <input id="proposition-name-{{i}}-input" type="text"
+                                    [(ngModel)]="proposition.name" name="proposition-name-{{i}}-input">
+                                    <label for="proposition-name-{{i}}-input" >Nom de la proposition</label>
+                                  </div>
+                                  <div class="input-field">
+                                    <textarea id="proposition-description-{{i}}-textarea" class="materialize-textarea"
+                                    [(ngModel)]="proposition.description" name="proposition-description-{{i}}-textarea"></textarea>
+                                    <label for="proposition-description-{{i}}-textarea">Description</label>
+                                  </div>
+                                  <a class="btn-floating waves-effect waves-light red" (click)="removeProposition(proposition)"><i class="material-icons">delete</i></a>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                      </div>
+                      <div class="card-action center-align">
+                        <a class="btn-floating waves-effect waves-light" (click)="addEmptyProposition()"><i class="material-icons">add</i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
+            </div>
+          </div>
+          <div class="card-action">
+              <div class="progress " *ngIf="isLoading()">
+                  <div class="indeterminate left"></div>
               </div>
+              <a class="waves-effect waves-light btn left grey" href="/poll" *ngIf="!isLoading()">
+                Retour
+              </a>
+              <button class="waves-effect waves-light btn right" *ngIf="!isLoading()" type="submit">
+                Publier
+              </button>
           </div>
         </div>
-        <div class="card-action">
-            <div class="progress " *ngIf="isLoading()">
-                <div class="indeterminate left"></div>
-            </div>
-            <a class="waves-effect waves-light btn left grey" *ngIf="!isLoading()">
-              Retour
-            </a>
-            <button class="waves-effect waves-light btn right" *ngIf="!isLoading()" type="submit">
-              Publier
-            </button>
-        </div>
       </div>
-    </div>
-</form>
+  </form>
+</article>
