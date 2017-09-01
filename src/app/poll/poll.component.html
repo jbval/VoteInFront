@@ -1,64 +1,68 @@
 <article class="container">
     <div class="row center">
-        <div class="card blue-grey darken-1">
-            <div class="card-content ">
-                <span class="card-title">Scrutins en cours</span>
-                <div class="card">
-                    <div class="card-content dark-text">
-                        <div *ngIf="pollList?.lenght == 0">
-                            <i class="material-icons">filter_drama</i> Aucun Scrutin en cours
-                        </div>
-                        <div class="progress" *ngIf="pollList == null">
-                            <div class="indeterminate left"></div>
-                        </div>
-                        <ul *ngIf="pollList?.lenght != 0" materialize="collapsible" class="collapsible" data-collapsible="accordion">
-                            <li *ngFor="let poll of pollList">
-                                <div class="collapsible-header valign-wrapper">
-                                    {{poll?.titre}}
-                                    <span class="new badge blue" data-badge-caption="">
-                                        {{poll?.mode?.nom}} {{poll?.public ? "public" : "privé"}}
-                                    </span>
-                                </div>
-                                <div class="collapsible-body">
-                                    <div class="row">
-                                        <div class="col s12 m6">
-                                            <p>Description: {{poll.description}}</p>
-                                            <p>Date d'ouverture: {{poll.dateOuverture}}</p>
-                                            <p>Date de cloture: {{poll.dateCloture}}</p>
-                                        </div>
-                                        <div class="col s12 m6">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header"><h5><b>Propositions du scrutin</b></h5></li>
-                                                <li class="collection-item" *ngFor="let proposition of poll.propositions">
-                                                    {{proposition.nom}}
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                    </div>
-                                    <a class="waves-effect waves-light btn center" href="/poll/{{poll.id}}">Acceder aux resultats</a>
-                                    <a class="waves-effect waves-light btn center" href="/poll/{{poll.id}}">Acceder au vote</a>
-                                </div>
-                            </li>
-                        </ul>
+        <h3>Scrutins en cours</h3>
+            <div class="card">
+                <div class="card-content dark-text">
+                    <div *ngIf="pollList?.lenght == 0">
+                        <i class="material-icons">filter_drama</i> Aucun Scrutin en cours
                     </div>
-                    <ul class="pagination">
-                            <li class="disabled"><a ><i class="material-icons">chevron_left</i></a></li>
-                            <li class="active"><a >1</a></li>
-                            <li class="waves-effect"><a >2</a></li>
-                            <li class="waves-effect"><a >3</a></li>
-                            <li class="waves-effect"><a >4</a></li>
-                            <li class="waves-effect"><a >5</a></li>
-                            <li class="waves-effect"><a ><i class="material-icons">chevron_right</i></a></li>
+                    <div class="progress" *ngIf="pollList == null">
+                        <div class="indeterminate left"></div>
+                    </div>
+                    <ul *ngIf="pollList?.lenght != 0" materialize="collapsible" class="collapsible" data-collapsible="accordion">
+                        <li *ngFor="let poll of pollList">
+                            <div class="collapsible-header valign-wrapper">
+                                <i class="material-icons">lock{{poll?.public ? "_open" : ""}}</i>
+                                {{poll?.titre}}
+                                <span class="new badge blue" data-badge-caption="">
+                                    {{poll?.mode?.nom}} 
+                                </span>
+                            </div>
+                            <div class="collapsible-body">
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <p>Description: {{poll.description}}</p>
+                                        <p>Date d'ouverture: {{poll.dateOuverture}}</p>
+                                        <p>Date de cloture: {{poll.dateCloture}}</p>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <ul class="collection with-header">
+                                            <li class="collection-header"><h5><b>Propositions du scrutin</b></h5></li>
+                                            <li class="collection-item" *ngFor="let proposition of poll.propositions">
+                                                {{proposition.nom}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col m6 s12">
+                                        <a class="waves-effect waves-light btn " (click)='goToVote(poll.id)'>Acceder au vote</a>
+                                    </div>
+                                    
+                                    <div class="col m6 s12">
+                                        <a class="waves-effect waves-light btn">Acceder aux résultats</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
+                    <ul class="pagination">
+                        <li class="disabled"><a ><i class="material-icons">chevron_left</i></a></li>
+                        <li class="active"><a >1</a></li>
+                        <li class="waves-effect"><a >2</a></li>
+                        <li class="waves-effect"><a >3</a></li>
+                        <li class="waves-effect"><a >4</a></li>
+                        <li class="waves-effect"><a >5</a></li>
+                        <li class="waves-effect"><a ><i class="material-icons">chevron_right</i></a></li>
+                    </ul>
+                </div>
                 </div>
                 <div class="row center">
                     <div class="col s12">
-                        <a class="waves-effect waves-light btn" href="/poll/create"><i class="material-icons left">add</i>Créer</a>
+                        <a class="waves-effect waves-light btn" (click)='navigateTo("poll/create")'><i class="material-icons left">add</i>Créer</a>
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
     
 </article>

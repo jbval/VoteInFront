@@ -30,23 +30,13 @@ export class CreatePollComponent implements OnInit {
 			err => console.log(err)
 		);
 		this.poll.propositions = new Array<Proposition>();
-		var p = new Proposition();
-		p.id = 0;
-		p.nom = "première proposition";
-		p.description = "description de la première proposition";
-		this.poll.propositions.push(p);
-		var p = new Proposition();
-		p.id = 0;
-		p.nom = "deuxième proposition";
-		p.description = "description de la deuxième proposition";
-		this.poll.propositions.push(p);
 	}
 
 	onSubmit(f: NgForm) {
 		if(f.valid){;
 			this.scrutinApiService.create(this.poll).subscribe(
 				res => {
-					this.router.navigate(["poll"])
+					this.backToPoll();
 				}, 
 				error =>{
 					console.log("error");
@@ -77,5 +67,7 @@ export class CreatePollComponent implements OnInit {
 		return this.sharedService.loading;
 	}
 
-	
+	backToPoll(){
+		this.router.navigate(["poll"]);
+	}
 }
