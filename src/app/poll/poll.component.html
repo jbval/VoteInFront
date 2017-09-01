@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col m6 s12">
-                                        <a class="waves-effect waves-light btn " (click)='goToVote(poll.id)'>Acceder au vote</a>
+                                        <a class="waves-effect waves-light btn " routerLink="{{poll.id}}">Acceder au vote</a>
                                     </div>
                                     
                                     <div class="col m6 s12">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="row center">
                     <div class="col s12">
-                        <a class="waves-effect waves-light btn" (click)='navigateTo("poll/create")'><i class="material-icons left">add</i>Créer</a>
+                        <a class="waves-effect waves-light btn" routerLink="create"><i class="material-icons left">add</i>Créer</a>
                     </div>
                 </div>
     </div>
