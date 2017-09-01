@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MajorityComponent } from './majority.component';
+import { ProportionalComponent } from './proportional.component';
 
-describe('MajorityComponent', () => {
+describe('VoteComponent', () => {
   let component: VotePollComponent;
   let fixture: ComponentFixture<VotePollComponent>;
 

@@ -12,6 +12,7 @@ import { PollComponent} from './poll/poll.component';
 import { CreatePollComponent } from './poll/create/createPoll.component';
 import { VotePollComponent } from './poll/vote/votePoll.component';
 import { MajorityComponent } from './poll/vote/majority/majority.component';
+import { ProportionalComponent } from './poll/vote/proportional/proportional.component';
 
 import { ScrutinApiService } from './services/api/scrutinApi.service';
 import { ModeScrutinApiService } from './services/api/modeScrutinApi.service';
@@ -23,6 +24,7 @@ import { SharedService } from './services/shared.service';
     HomeComponent,
     PollComponent,
     MajorityComponent,
+    ProportionalComponent,
     CreatePollComponent,
     VotePollComponent,
   ],

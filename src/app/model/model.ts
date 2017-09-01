@@ -20,7 +20,7 @@ export class ModeScrutin {
     nom: string;
 }
 
-export class ModeScrutinComplexe extends ModeScrutin{
+export class ScrutinMajoritaire extends ModeScrutin{
     choix: Choix[]; // les choix POSSIBLE pour chaques propositions d'un scrutin (ex: NUL, MOYEN, EXELENT)
 }
 
@@ -40,10 +40,20 @@ export class VoteProportionnel extends Vote {
 }
 
 export class VoteMajoritaire extends Vote {
-    choix: PropositionChoix[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
+    PropositionChoix: PropositionChoix[]; // les choix relatif au scrutin => (pour x: choix[x] correpond au choix de la proposition scrutin.propositions[x])
+
+    constructor(propositionChoix: PropositionChoix[]) {
+        super();
+        this.PropositionChoix = propositionChoix;
+    }
 }
 
 export class PropositionChoix {
     propositionId: number;
     choixId: number;
+
+    constructor(propositionId: number, choixId: number) {
+        this.propositionId = propositionId;
+        this.choixId = choixId;
+    }
 }

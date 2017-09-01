@@ -1,6 +1,6 @@
 <section class="collapsible-container">
   <ul materialize="collapsible" class="collapsible popout no-border" data-collapsible="accordion">
-    <li *ngFor="let proposition of scrutin.Propositions"> 
+    <li *ngFor="let proposition of scrutin.propositions"> 
       <div class="collapsible-header valign-wrapper">
           <div class="header-container">
               <div class="row valign-wrapper">
@@ -11,35 +11,35 @@
                       </div>
                       <div class="col">
                         <p class="name-candidate">
-                          {{ proposition.Name }}
+                          {{ proposition.name }}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="col s6 m6 l4">
                     <div>
-                      <a materialize="dropdown" (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown">{{getLibelleChoix(proposition)}}</a>
+                      <a materialize="dropdown" (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown">{{getLabelGrade(proposition)}}</a>
                       <ul id='dropdown' class='dropdown-content'>
-                        <li><a (click)="$event.stopPropagation();selectGrade(proposition, choix)" value="7" class="grade-excellent">Excellent</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[0]);" class="grade-excellent">Excellent</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" value="6" class="grade-very-good">Très bien</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[1]);" class="grade-very-good">Très bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectGrade('Bien')" value="5" class="grade-good">Bien</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[2]);" class="grade-good">Bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" value="4" class="grade-fairly-well">Assez bien</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[3]);" class="grade-fairly-well">Assez bien</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectGrade('Passable')" value="3" class="grade-fair">Passable</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[4]);" class="grade-fair">Passable</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectGrade('Insuffisant')" value="2" class="grade-insufficient">Insuffisant</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[5]);" class="grade-insufficient">Insuffisant</a></li>
                         <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation()" value="1" class="grade-to-reject">A rejeter</a></li>
+                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[6]);" class="grade-to-reject">A rejeter</a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
           </div>
       </div>
-      <div class="collapsible-body no-border"><p>{{ proposition.Description }}</p></div>
+      <div class="collapsible-body no-border"><p>{{ proposition.description }}</p></div>
     </li>
   </ul>
 </section>  

@@ -1,23 +1,22 @@
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Scrutin, Proposition } from '../../model/model';
+import { Scrutin, Proposition, ScrutinMajoritaire, VoteMajoritaire, Choix, PropositionChoix } from '../../../model/model';
 
-import { ScrutinApiService } from '../../services/api/scrutinApi.service';
-import { SharedService } from '../../services/shared.service';
+import { ScrutinApiService } from '../../../services/api/scrutinApi.service';
+import { SharedService } from '../../../services/shared.service';
 
 import { $ } from "jquery";
 
 @Component({
-  selector: 'app-vote',
-  templateUrl: './votePoll.component.html',
-  styleUrls: ['./votePoll.component.sass']
+  selector: 'app-proportional',
+  templateUrl: './proportional.component.html',
+  styleUrls: ['./proportional.component.sass']
 })
-export class VotePollComponent implements OnInit {
+export class ProportionalComponent implements OnInit {
   private pollId: string;
   private scrutin: Scrutin = new Scrutin;
-  private modeMajoritaire: Boolean;
-  
+
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
   ngOnInit() {
@@ -29,6 +28,4 @@ export class VotePollComponent implements OnInit {
         });
     })
   }
-
-
 }
