@@ -36,7 +36,7 @@ export class CreatePollComponent implements OnInit {
 		if(f.valid){;
 			this.scrutinApiService.create(this.poll).subscribe(
 				res => {
-					this.backToPoll();
+					this.router.navigate(["/poll"]);
 				}, 
 				error =>{
 					console.log("error");
@@ -65,9 +65,5 @@ export class CreatePollComponent implements OnInit {
 
 	isLoading(){
 		return this.sharedService.loading;
-	}
-
-	backToPoll(){
-		this.router.navigate(["poll"]);
-	}
+	};
 }

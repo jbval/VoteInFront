@@ -1,29 +1,45 @@
 <section class="collapsible-container">
-  <ul materialize="collapsible" class="collapsible popout no-border" data-collapsible="accordion">
-    <li *ngFor="let proposition of scrutin.propositions"> 
-      <div class="collapsible-header valign-wrapper">
-          <div class="header-container">
-              <div class="row valign-wrapper">
-                  <div class="col s6 m6 l8">
-                    <div class="row valign-wrapper">
-                      <div class="col img-container">
-                          <img src="assets/profil-candidate50x50.png" class="circle">
-                      </div>
-                      <div class="col">
-                        <p class="name-candidate">
-                          {{ proposition.name }}
-                        </p>
+    <ul materialize="collapsible" class="collapsible popout no-border" data-collapsible="accordion">
+      <li *ngFor="let proposition of scrutin.propositions" [ngClass]="{'selected': isSelected(proposition)}"> 
+        <div class="collapsible-header valign-wrapper">
+            <div class="header-container">
+                <div class="row valign-wrapper">
+                    <div class="col s6 m6 l8">
+                      <div class="row valign-wrapper">
+                        <div class="col img-container">
+                            <img src="assets/profil-candidate50x50.png" class="circle">
+                        </div>
+                        <div class="col">
+                          <p class="name-candidate">
+                            {{ proposition.nom }}
+                          </p>
+                        </div>
                       </div>
                     </div>
+                    <div class="col s6 m6 l4">
+                        <button (click)="$event.stopPropagation(); selectCandidate(proposition)" 
+                                class='dropdown-button btn btn-vote'>
+                                  <ng-container *ngIf='!isSelected(proposition)'>Voter</ng-container>
+                                  <ng-container *ngIf='isSelected(proposition)'>
+                                    <i class="material-icons">check</i>
+                                  </ng-container>
+                              </button>
+                    </div>
                   </div>
-                  <div class="col s6 m6 l4">
-                      <button (click)="$event.stopPropagation(); selectCandidate(proposition)" class='dropdown-button btn btn-grade grade-excellent'>Voter</button>
-                  </div>
-                </div>
-          </div>
+            </div>
+        </div>
+        <div class="collapsible-body no-border"><p>{{ proposition.description }}</p></div>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col s12 center-align">
+          <button [disabled]="isVote()" 
+                (click)="vote(voteProportionnel)" 
+                class="btn waves-effect waves-light" 
+                name="action">
+                Soumettre
+        </button>
       </div>
-      <div class="collapsible-body no-border"><p>{{ proposition.description }}</p></div>
-    </li>
-  </ul>
-  <button [disabled]="isVote()" (click)="vote(voteProportionnel)" class="btn waves-effect waves-light" name="action">Soumettre</button>
+    </div>
 </section>  
+

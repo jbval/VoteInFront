@@ -42,6 +42,13 @@ export class ProportionalComponent implements OnInit {
       });
   }
 
+  isSelected(proposition: Proposition) {
+    if (this.voteProportionnel != null) {
+      return proposition.id == this.voteProportionnel.proposition.id  
+    }
+    return false
+  }
+
   isVote() {
     return this.voteProportionnel == null;
   }

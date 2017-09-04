@@ -29,6 +29,4 @@ export class VotePollComponent implements OnInit {
         });
     })
   }
-
-
 }

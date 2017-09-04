@@ -86,7 +86,7 @@
               <div class="progress " *ngIf="isLoading()">
                   <div class="indeterminate left"></div>
               </div>
-              <a class="waves-effect waves-light btn left" (click)="backToPoll()" *ngIf="!isLoading()">
+              <a class="waves-effect waves-light btn left" routerLink="/poll" *ngIf="!isLoading()">
                 Retour
               </a>
               <button class="waves-effect waves-light btn right" *ngIf="!isLoading()" type="submit">

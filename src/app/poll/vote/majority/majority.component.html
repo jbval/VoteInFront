@@ -11,7 +11,7 @@
                       </div>
                       <div class="col">
                         <p class="name-candidate">
-                          {{ proposition.name }}
+                          {{ proposition.nom }}
                         </p>
                       </div>
                     </div>
@@ -42,4 +42,14 @@
       <div class="collapsible-body no-border"><p>{{ proposition.description }}</p></div>
     </li>
   </ul>
+  <div class="row">
+      <div class="col s12 center-align">
+          <button [disabled]="isVote(voteMajoritaire)" 
+                  (click)="vote(voteMajoritaire)" 
+                  class="btn waves-effect waves-light" 
+                  name="action">
+                  Soumettre
+      </button>
+    </div>
+  </div>
 </section>  
