@@ -14,5 +14,5 @@ app.get('*', (req, res) => {
   res.sendFile(req.url, { root: root });
 });
 
-const port = process.env.PORT || '80';
+const port = process.env.PORT || '3000';
 app.listen(port, () => console.log(`API running on localhost:${port}`));
