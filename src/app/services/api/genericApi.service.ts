@@ -17,7 +17,7 @@ export abstract class GenericApiService {
     }
 
     // Base URL for Petfinder API
-    protected apiUrl = "http://dev2-pc:3000/";
+    protected apiUrl = "http://localhost:3000/";
     protected controllerName = "";
 
     get(): Observable<any[]> {
