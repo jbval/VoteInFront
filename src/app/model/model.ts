@@ -59,6 +59,7 @@ export class VoteMajoritaire extends Vote {
 export class PropositionChoix {
     propositionId: number;
     choixId: number;
+    choix: Choix;
 
     constructor(propositionId: number, choixId: number) {
         this.propositionId = propositionId;

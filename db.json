@@ -287,6 +287,30 @@
       "dateCloture": "08/09/2017",
       "description": "Descritpion d'un scrutin majoritaire avec un petit peu plus de texte la famille.",
       "id": 9
+    },
+    {
+      "propositions": [
+        {
+          "id": 0,
+          "nom": "Candidat 1",
+          "description": "efef"
+        },
+        {
+          "id": 0,
+          "nom": "Candidat 2",
+          "description": "efef"
+        }
+      ],
+      "public": false,
+      "mode": {
+        "id": 1,
+        "nom": "Majoritaire"
+      },
+      "titre": "vdefef",
+      "dateOuverture": "13/09/2017",
+      "dateCloture": "29/09/2017",
+      "description": "rfef",
+      "id": 10
     }
   ],
   "modeScrutin": [
@@ -454,6 +478,68 @@
         "description": "description de la première proposition"
       },
       "id": 5
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 3,
+            "nom": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 4,
+            "nom": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 2,
+        "titre": "Election présidentielle 2016",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin proportionel"
+      },
+      "proposition": {
+        "id": 4,
+        "nom": "deuxième proposition",
+        "description": "description de la deuxième proposition"
+      },
+      "id": 6
+    },
+    {
+      "scrutin": {
+        "propositions": [
+          {
+            "id": 1,
+            "nom": "première proposition",
+            "description": "description de la première proposition"
+          },
+          {
+            "id": 2,
+            "nom": "deuxième proposition",
+            "description": "description de la deuxième proposition"
+          }
+        ],
+        "dateOuverture": "2017-08-31T09:58:17.490Z",
+        "mode": {
+          "id": 2,
+          "nom": "Proportionnel"
+        },
+        "id": 1,
+        "titre": "Election présidentielle 2018",
+        "dateCloture": "",
+        "description": "Simulation des élections présidentielles scrutin majoritaire"
+      },
+      "proposition": {
+        "id": 1,
+        "nom": "première proposition",
+        "description": "description de la première proposition"
+      },
+      "id": 7
     }
   ]
 }

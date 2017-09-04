@@ -6,7 +6,7 @@
     "fake-api": "json-server --watch db.json",
     "ng": "ng",
     "start-ng": "ng serve",
-    "start": "node src/server/index.js",
+    "start": "node dist/index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

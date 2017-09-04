@@ -18,21 +18,16 @@
                   </div>
                   <div class="col s6 m6 l4">
                     <div>
-                      <a materialize="dropdown" (click)="$event.stopPropagation()" class='dropdown-button btn btn-grade grade-excellent' data-activates="dropdown">{{getLabelGrade(proposition)}}</a>
+                      <a materialize="dropdown" (click)="$event.stopPropagation()" class='dropdown-button btn' 
+                          [ngClass]="getChoixClass(getChoixForPropositon(proposition))" data-activates="dropdown">
+                        {{getChoixForPropositon(proposition)?getChoixForPropositon(proposition).nom: "Voter"}}
+                      </a>
                       <ul id='dropdown' class='dropdown-content'>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[0]);" class="grade-excellent">Excellent</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[1]);" class="grade-very-good">Très bien</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[2]);" class="grade-good">Bien</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[3]);" class="grade-fairly-well">Assez bien</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[4]);" class="grade-fair">Passable</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[5]);" class="grade-insufficient">Insuffisant</a></li>
-                        <li class="divider"></li>
-                        <li><a (click)="$event.stopPropagation();selectedGrade(proposition, scrutin.mode.choix[6]);" class="grade-to-reject">A rejeter</a></li>
+                        <li *ngFor="let c of scrutin.mode.choix">
+                          <a (click)="$event.stopPropagation();selectGrade(proposition, c);"  [ngClass]="getChoixClass(c)">
+                            {{c.nom}}
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>

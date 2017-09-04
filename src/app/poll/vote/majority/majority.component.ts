@@ -30,22 +30,22 @@ export class MajorityComponent implements OnInit {
     })
   }
 
-  selectedGrade(proposition: Proposition, choix: Choix) {
-    let a = new PropositionChoix(proposition.id, choix.id)
+  selectGrade(proposition: Proposition, choix: Choix) {
+    let a = new PropositionChoix(proposition.id, choix.id);
+    a.choix = choix;
     this.voteMajoritaire.PropositionChoix.push(a)
   }
 
-  getLabelGrade(proposition: Proposition) {
-    let label = "voter";
+  getChoixForPropositon(proposition: Proposition): Choix {
     if (this.voteMajoritaire.PropositionChoix != null) {
       for (let propositionChoix of this.voteMajoritaire.PropositionChoix) {
         if (propositionChoix.propositionId == proposition.id) {
           let scrutinMajoritaire = <ScrutinMajoritaire> this.scrutin.mode;
-          label = scrutinMajoritaire.choix[propositionChoix.choixId].nom
+          return propositionChoix.choix;
         }
       }
     }
-    return label;
+    return null;
   }
 
   vote(voteMajoritaire: VoteMajoritaire) {
@@ -54,5 +54,30 @@ export class MajorityComponent implements OnInit {
 
   isVote(voteMajoritaire: VoteMajoritaire) {
     return true
+  }
+
+  getChoixClass(choix: Choix): string {
+    if(!choix)
+    {
+      return "";
+    }
+    switch(choix.valeur){
+      case 0:
+        return "btn-grade grade-to-reject";
+      case 1:
+        return "btn-grade grade-insufficient";
+      case 2:
+        return "btn-grade grade-fair";
+      case 3:
+        return "btn-grade grade-fairly-well";
+      case 4: 
+        return "btn-grade grade-good";
+      case 5:
+        return "btn-grade grade-very-good";
+      case 6:
+        return "btn-grade grade-excellent";
+      default:
+        return "";
+    }
   }
 }
