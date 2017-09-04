@@ -13,7 +13,7 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./poll.component.sass']
 })
 export class PollComponent implements OnInit {
-  private pollList:Scrutin[];
+  public pollList:Scrutin[];
 
   constructor(private scrutinApiService:ScrutinApiService,
     private router:Router) {}

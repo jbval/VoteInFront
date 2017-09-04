@@ -14,9 +14,9 @@ import { $ } from "jquery";
   styleUrls: ['./votePoll.component.sass']
 })
 export class VotePollComponent implements OnInit {
-  private pollId: string;
-  private scrutin: Scrutin = new Scrutin;
-  private modeMajoritaire: Boolean;
+  public pollId: string;
+  public scrutin: Scrutin = new Scrutin;
+  public modeMajoritaire: Boolean;
   
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 

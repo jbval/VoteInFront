@@ -14,8 +14,8 @@ import { SharedService } from '../../services/shared.service';
 	styleUrls: ['./createPoll.component.sass']
 })
 export class CreatePollComponent implements OnInit {
-	private poll: Scrutin = new Scrutin();
-	private modesScrutin: Array<ModeScrutin>;
+	public poll: Scrutin = new Scrutin();
+	public modesScrutin: Array<ModeScrutin>;
 	
 	constructor(private scrutinApiService:ScrutinApiService,
 		private modeScrutinApiService:ModeScrutinApiService,

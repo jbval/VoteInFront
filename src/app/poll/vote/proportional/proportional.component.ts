@@ -15,9 +15,9 @@ import { $ } from "jquery";
   styleUrls: ['./proportional.component.sass']
 })
 export class ProportionalComponent implements OnInit {
-  private pollId: string;
-  private scrutin: Scrutin = new Scrutin;
-  private voteProportionnel: VoteProportionnel;
+  public pollId: string;
+  public scrutin: Scrutin = new Scrutin;
+  public voteProportionnel: VoteProportionnel;
 
   constructor(private route: Router, private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private voteApiService: VoteApiService, private sharedService:SharedService) { }
 

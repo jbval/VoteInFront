@@ -3,13 +3,13 @@
         <h3>Scrutins en cours</h3>
             <div class="card">
                 <div class="card-content dark-text">
-                    <div *ngIf="pollList?.lenght == 0">
+                    <div *ngIf="pollList?.length == 0">
                         <i class="material-icons">filter_drama</i> Aucun Scrutin en cours
                     </div>
                     <div class="progress" *ngIf="pollList == null">
                         <div class="indeterminate left"></div>
                     </div>
-                    <ul *ngIf="pollList?.lenght != 0" materialize="collapsible" class="collapsible" data-collapsible="accordion">
+                    <ul *ngIf="pollList?.length != 0" materialize="collapsible" class="collapsible" data-collapsible="accordion">
                         <li *ngFor="let poll of pollList">
                             <div class="collapsible-header valign-wrapper">
                                 <i class="material-icons">lock{{poll?.public ? "_open" : ""}}</i>

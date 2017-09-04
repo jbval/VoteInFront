@@ -14,9 +14,9 @@ import { $ } from "jquery";
   styleUrls: ['./majority.component.sass']
 })
 export class MajorityComponent implements OnInit {
-  private pollId: string;
-  private scrutin: Scrutin = new Scrutin;
-  private voteMajoritaire: VoteMajoritaire = new VoteMajoritaire(this.scrutin, new Array<PropositionChoix>());
+  public pollId: string;
+  public scrutin: Scrutin = new Scrutin;
+  public voteMajoritaire: VoteMajoritaire = new VoteMajoritaire(this.scrutin, new Array<PropositionChoix>());
 
   constructor(private activatedRoute: ActivatedRoute, private scrutinApiService:ScrutinApiService, private sharedService:SharedService) { }
 
